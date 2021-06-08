@@ -1,25 +1,25 @@
-# s1_te_en.yaml
+# s2_te_en.yaml
 
 ## Where the samples will be written
-save_data: s1/run/example
+save_data: s2/run/example
 ## Where the vocab(s) will be written
-src_vocab: s1/run/example.vocab.src
-tgt_vocab: s1/run/example.vocab.tgt
+src_vocab: s2/run/example.vocab.src
+tgt_vocab: s2/run/example.vocab.tgt
 # Prevent overwriting existing files in the folder
 overwrite: False
 
 # Corpus opts:
 data:
     corpus_1:
-        path_src: s1/s1_train.te
-        path_tgt: s1/s1_train.en
+        path_src: s2/s2_te_train.txt
+        path_tgt: s2/s2_en_train.txt
     valid:
-        path_src: s1/s1_dev.te
-        path_tgt: s1/s1_dev.en
+        path_src: s2/s2_te_dev.txt
+        path_tgt: s2/s2_en_dev.txt
 
 # Vocabulary files that were just created
-src_vocab: s1/run/example.vocab.src
-tgt_vocab: s1/run/example.vocab.tgt
+src_vocab: s2/run/example.vocab.src
+tgt_vocab: s2/run/example.vocab.tgt
 
 # Train on a single GPU
 world_size: 1
@@ -27,14 +27,14 @@ gpu_ranks: [0]
 
 
 # Where to save the checkpoints
-save_model: s1/run/model
-save_checkpoint_steps: 10000
+save_model: s2/run/model
+save_checkpoint_steps: 1000
 keep_checkpoint: 10
 seed: 3435
-train_steps: 100000
-valid_steps: 5000
+train_steps: 20000
+valid_steps: 1000
 warmup_steps: 500
-report_every: 1000
+report_every: 100
 
 decoder_type: transformer
 encoder_type: transformer
