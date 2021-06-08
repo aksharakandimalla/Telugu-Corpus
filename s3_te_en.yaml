@@ -1,4 +1,4 @@
-# s2_te_en.yaml
+# s3_te_en.yaml
 
 ## Where the samples will be written
 save_data: s3/run/example
