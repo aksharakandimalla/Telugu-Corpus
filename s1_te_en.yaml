@@ -11,11 +11,11 @@ overwrite: False
 # Corpus opts:
 data:
     corpus_1:
-        path_src: s1/.s1_train.te
-        path_tgt: s1/.s1_train.en
+        path_src: s1/s1_train.te
+        path_tgt: s1/s1_train.en
     valid:
-        path_src: s1/.s1_dev.te
-        path_tgt: s1/.s1_dev.en
+        path_src: s1/s1_dev.te
+        path_tgt: s1/s1_dev.en
 
 # Vocabulary files that were just created
 src_vocab: s1/run/example.vocab.src
