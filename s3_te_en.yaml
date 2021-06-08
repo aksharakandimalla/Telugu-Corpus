@@ -1,5 +1,11 @@
 # s3_te_en.yaml
 
+# data from trainbible-uedin (43530) and trainOpenSubtitles (19055), total training sentences = 62585
+# Validation accuracy: 18.4295 after 2000 steps
+#
+#
+#
+#
 ## Where the samples will be written
 save_data: s3/run/example
 ## Where the vocab(s) will be written
@@ -31,10 +37,10 @@ save_model: s3/run/model
 save_checkpoint_steps: 1000
 keep_checkpoint: 10
 seed: 3435
-train_steps: 20000
+train_steps: 10000
 valid_steps: 1000
 warmup_steps: 500
-report_every: 100
+report_every: 500
 
 decoder_type: transformer
 encoder_type: transformer
