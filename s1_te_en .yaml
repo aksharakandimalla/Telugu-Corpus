@@ -1,4 +1,4 @@
-# toy_pmjoshua_en_bn.yaml
+# s1_te_en .yaml
 
 ## Where the samples will be written
 save_data: s1/run/example
@@ -11,15 +11,15 @@ overwrite: False
 # Corpus opts:
 data:
     corpus_1:
-        path_src: joshua_enbn/train_pmjoshua_NMT.bn
-        path_tgt: joshua_enbn/train_pmjoshua_NMT.en
+        path_src: s1/.s1_train.te
+        path_tgt: s1/.s1_train.en
     valid:
-        path_src: joshua_enbn/dev_pmjoshua_NMT.bn
-        path_tgt: joshua_enbn/dev_pmjoshua_NMT.en
+        path_src: s1/.s1_dev.te
+        path_tgt: s1/.s1_dev.en
 
 # Vocabulary files that were just created
-src_vocab: joshua_enbn/run/example.vocab.src
-tgt_vocab: joshua_enbn/run/example.vocab.tgt
+src_vocab: s1/run/example.vocab.src
+tgt_vocab: s1/run/example.vocab.tgt
 
 # Train on a single GPU
 world_size: 1
@@ -27,14 +27,14 @@ gpu_ranks: [0]
 
 
 # Where to save the checkpoints
-save_model: joshua_enbn/run/model
-save_checkpoint_steps: 500
+save_model: s1/run/model
+save_checkpoint_steps: 10000
 keep_checkpoint: 10
 seed: 3435
-train_steps: 1000
-valid_steps: 500
-warmup_steps: 100
-report_every: 50
+train_steps: 100000
+valid_steps: 5000
+warmup_steps: 500
+report_every: 1000
 
 decoder_type: transformer
 encoder_type: transformer
