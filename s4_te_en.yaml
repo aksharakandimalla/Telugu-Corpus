@@ -2,7 +2,7 @@
 
 # data from trainbible-uedin (43530) and trainOpenSubtitles (19055), total training sentences = 62585
 # Validation accuracy: 18.4295 after 2000 steps
-#
+# sentence piece tokenization
 #
 #
 #
