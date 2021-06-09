@@ -1,16 +1,16 @@
 # s4_te_en.yaml
 
 # data from trainbible-uedin (43530) and trainOpenSubtitles (19055), total training sentences = 62585
-# Validation accuracy: 18.4295 after 2000 steps
-# sentence piece tokenization
+# 
+# Byte pair encoding-50,000 worde model
 #
 #
 #
 ## Where the samples will be written
-save_data: s4/run/example
+save_data: s4/run1/example
 ## Where the vocab(s) will be written
-src_vocab: s4/run/example.vocab.src
-tgt_vocab: s4/run/example.vocab.tgt
+src_vocab: s4/run1/example.vocab.src
+tgt_vocab: s4/run1/example.vocab.tgt
 # Prevent overwriting existing files in the folder
 overwrite: False
 
@@ -33,11 +33,11 @@ data:
     corpus_1:
         path_src: s4/s4_te_train.txt
         path_tgt: s4/s4_en_train.txt
-        transforms: [onmt_tokenize]
+        transforms: [bpe]
     valid:
         path_src: s4/s4_te_dev.txt
         path_tgt: s4/s4_en_dev.txt
-        transforms: [onmt_tokenize]
+        transforms: [bpe]
 
 # Vocabulary files that were just created
 src_vocab: s4/run/example.vocab.src
