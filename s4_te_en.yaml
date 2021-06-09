@@ -7,18 +7,18 @@
 #
 #
 ## Where the samples will be written
-save_data: s3/run/example
+save_data: s4/run/example
 ## Where the vocab(s) will be written
-src_vocab: s3/run/example.vocab.src
-tgt_vocab: s3/run/example.vocab.tgt
+src_vocab: s4/run/example.vocab.src
+tgt_vocab: s4/run/example.vocab.tgt
 # Prevent overwriting existing files in the folder
 overwrite: False
 
 # Tokenization options
-src_subword_type: sentencepiece
-src_subword_model: examples/subword.spm.model
-tgt_subword_type: sentencepiece
-tgt_subword_model: examples/subword.spm.model
+src_subword_type: bpe
+src_subword_model: s4/examples/te.wiki.bpe.vs50000.model
+tgt_subword_type: bpe
+tgt_subword_model: s4/examples/en.wiki.bpe.vs50000.model
 
 # Number of candidates for SentencePiece sampling
 subword_nbest: 20
@@ -31,17 +31,17 @@ tgt_onmttok_kwargs: "{'mode': 'none', 'spacer_annotate': True}"
 # Corpus opts:
 data:
     corpus_1:
-        path_src: s3/s3_te_train.txt
-        path_tgt: s3/s3_en_train.txt
+        path_src: s4/s4_te_train.txt
+        path_tgt: s4/s4_en_train.txt
         transforms: [onmt_tokenize]
     valid:
-        path_src: s3/s3_te_dev.txt
-        path_tgt: s3/s3_en_dev.txt
+        path_src: s4/s4_te_dev.txt
+        path_tgt: s4/s4_en_dev.txt
         transforms: [onmt_tokenize]
 
 # Vocabulary files that were just created
-src_vocab: s3/run/example.vocab.src
-tgt_vocab: s3/run/example.vocab.tgt
+src_vocab: s4/run/example.vocab.src
+tgt_vocab: s4/run/example.vocab.tgt
 
 # Train on a single GPU
 world_size: 1
@@ -49,7 +49,7 @@ gpu_ranks: [0]
 
 
 # Where to save the checkpoints
-save_model: s3/run/model
+save_model: s4/run/model
 save_checkpoint_steps: 1000
 keep_checkpoint: 10
 seed: 3435
