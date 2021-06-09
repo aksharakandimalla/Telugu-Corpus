@@ -1,16 +1,16 @@
-# s43_te_en.yaml
+# s44_te_en.yaml
 
 # data from trainbible-uedin (43530) and trainOpenSubtitles (19055), total training sentences = 62585
 # 
 # Byte pair encoding-200,000 worde model
-#
+# glove embeddings
 #
 #
 ## Where the samples will be written
-save_data: s4/run3/example
+save_data: s4/run4/example
 ## Where the vocab(s) will be written
-src_vocab: s4/run3/example.vocab.src
-tgt_vocab: s4/run3/example.vocab.tgt
+src_vocab: s4/run4/example.vocab.src
+tgt_vocab: s4/run4/example.vocab.tgt
 # Prevent overwriting existing files in the folder
 overwrite: False
 
@@ -28,6 +28,10 @@ subword_alpha: 0.1
 src_onmttok_kwargs: "{'mode': 'none', 'spacer_annotate': True}"
 tgt_onmttok_kwargs: "{'mode': 'none', 'spacer_annotate': True}"
 
+both_embeddings: glove_dir/glove.6B.100d.txt
+embeddings_type: "GloVe"
+word_vec_size: 100
+
 # Corpus opts:
 data:
     corpus_1:
@@ -40,8 +44,8 @@ data:
         transforms: [onmt_tokenize]
 
 # Vocabulary files that were just created
-src_vocab: s4/run3/example.vocab.src
-tgt_vocab: s4/run3/example.vocab.tgt
+src_vocab: s4/run4/example.vocab.src
+tgt_vocab: s4/run4/example.vocab.tgt
 
 # Train on a single GPU
 world_size: 1
@@ -49,7 +53,7 @@ gpu_ranks: [0]
 
 
 # Where to save the checkpoints
-save_model: s4/run3/model
+save_model: s4/run4/model
 save_checkpoint_steps: 1000
 keep_checkpoint: 10
 seed: 3435
