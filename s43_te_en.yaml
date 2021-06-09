@@ -1,24 +1,24 @@
-# s42_te_en.yaml
+# s43_te_en.yaml
 
 # data from trainbible-uedin (43530) and trainOpenSubtitles (19055), total training sentences = 62585
 # 
-# Byte pair encoding-100,000 worde model
+# Byte pair encoding-200,000 worde model
 #
 #
 #
 ## Where the samples will be written
-save_data: s4/run2/example
+save_data: s4/run3/example
 ## Where the vocab(s) will be written
-src_vocab: s4/run2/example.vocab.src
-tgt_vocab: s4/run2/example.vocab.tgt
+src_vocab: s4/run3/example.vocab.src
+tgt_vocab: s4/run3/example.vocab.tgt
 # Prevent overwriting existing files in the folder
 overwrite: False
 
 # Tokenization options
 src_subword_type: bpe
-src_subword_model: s4/examples/te.wiki.bpe.vs100000.model
+src_subword_model: s4/examples/te.wiki.bpe.vs200000.model
 tgt_subword_type: bpe
-tgt_subword_model: s4/examples/en.wiki.bpe.vs100000.model
+tgt_subword_model: s4/examples/en.wiki.bpe.vs200000.model
 
 # Number of candidates for SentencePiece sampling
 subword_nbest: 20
@@ -40,8 +40,8 @@ data:
         transforms: [onmt_tokenize]
 
 # Vocabulary files that were just created
-src_vocab: s4/run2/example.vocab.src
-tgt_vocab: s4/run2/example.vocab.tgt
+src_vocab: s4/run3/example.vocab.src
+tgt_vocab: s4/run3/example.vocab.tgt
 
 # Train on a single GPU
 world_size: 1
@@ -49,7 +49,7 @@ gpu_ranks: [0]
 
 
 # Where to save the checkpoints
-save_model: s4/run2/model
+save_model: s4/run3/model
 save_checkpoint_steps: 1000
 keep_checkpoint: 10
 seed: 3435
