@@ -1,4 +1,4 @@
-# s3_te_en.yaml
+# s4_te_en.yaml
 
 # data from trainbible-uedin (43530) and trainOpenSubtitles (19055), total training sentences = 62585
 # Validation accuracy: 18.4295 after 2000 steps
@@ -14,14 +14,30 @@ tgt_vocab: s3/run/example.vocab.tgt
 # Prevent overwriting existing files in the folder
 overwrite: False
 
+# Tokenization options
+src_subword_type: sentencepiece
+src_subword_model: examples/subword.spm.model
+tgt_subword_type: sentencepiece
+tgt_subword_model: examples/subword.spm.model
+
+# Number of candidates for SentencePiece sampling
+subword_nbest: 20
+# Smoothing parameter for SentencePiece sampling
+subword_alpha: 0.1
+# Specific arguments for pyonmttok
+src_onmttok_kwargs: "{'mode': 'none', 'spacer_annotate': True}"
+tgt_onmttok_kwargs: "{'mode': 'none', 'spacer_annotate': True}"
+
 # Corpus opts:
 data:
     corpus_1:
         path_src: s3/s3_te_train.txt
         path_tgt: s3/s3_en_train.txt
+        transforms: [onmt_tokenize]
     valid:
         path_src: s3/s3_te_dev.txt
         path_tgt: s3/s3_en_dev.txt
+        transforms: [onmt_tokenize]
 
 # Vocabulary files that were just created
 src_vocab: s3/run/example.vocab.src
