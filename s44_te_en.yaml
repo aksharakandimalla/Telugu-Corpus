@@ -28,7 +28,7 @@ subword_alpha: 0.1
 src_onmttok_kwargs: "{'mode': 'none', 'spacer_annotate': True}"
 tgt_onmttok_kwargs: "{'mode': 'none', 'spacer_annotate': True}"
 
-both_embeddings: glove_dir/glove.6B.100d.txt
+both_embeddings: glove_dir/glove_dir/glove.6B.100d.txt
 embeddings_type: "GloVe"
 word_vec_size: 100
 
