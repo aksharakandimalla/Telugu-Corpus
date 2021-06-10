@@ -1,16 +1,16 @@
-# s44_te_en.yaml
+# s5_te_en.yaml
 
-# data from trainbible-uedin (43530) and trainOpenSubtitles (19055), total training sentences = 62585
+# data from himanshudce- 75000, sentences
 # 
 # Byte pair encoding-200,000 worde model
-# glove embeddings
+# glove embeddings- 300 dimensions
 #
 #
 ## Where the samples will be written
-save_data: s4/run4/example
+save_data: s5/run/example
 ## Where the vocab(s) will be written
-src_vocab: s4/run4/example.vocab.src
-tgt_vocab: s4/run4/example.vocab.tgt
+src_vocab: s5/run/example.vocab.src
+tgt_vocab: s5/run/example.vocab.tgt
 # Prevent overwriting existing files in the folder
 overwrite: False
 
@@ -28,24 +28,24 @@ subword_alpha: 0.1
 src_onmttok_kwargs: "{'mode': 'none', 'spacer_annotate': True}"
 tgt_onmttok_kwargs: "{'mode': 'none', 'spacer_annotate': True}"
 
-both_embeddings: glove_dir/glove_dir/glove.6B.100d.txt
+both_embeddings: glove_dir/glove_dir/glove.6B.300d.txt
 embeddings_type: "GloVe"
 word_vec_size: 100
 
 # Corpus opts:
 data:
     corpus_1:
-        path_src: s4/s4_te_train.txt
-        path_tgt: s4/s4_en_train.txt
+        path_src: s5/train.te
+        path_tgt: s5/train.en
         transforms: [onmt_tokenize]
     valid:
-        path_src: s4/s4_te_dev.txt
-        path_tgt: s4/s4_en_dev.txt
+        path_src: s5/val.te
+        path_tgt: s5/val.en
         transforms: [onmt_tokenize]
 
 # Vocabulary files that were just created
-src_vocab: s4/run4/example.vocab.src
-tgt_vocab: s4/run4/example.vocab.tgt
+src_vocab: s5/run/example.vocab.src
+tgt_vocab: s5/run/example.vocab.tgt
 
 # Train on a single GPU
 world_size: 1
@@ -53,7 +53,7 @@ gpu_ranks: [0]
 
 
 # Where to save the checkpoints
-save_model: s4/run4/model
+save_model: s5/run/model
 save_checkpoint_steps: 1000
 keep_checkpoint: 10
 seed: 3435
